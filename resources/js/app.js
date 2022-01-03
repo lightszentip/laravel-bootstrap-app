@@ -1,6 +1,5 @@
-
-import { Tooltip, Toast, Popover } from 'bootstrap';
 import * as bootstrap from 'bootstrap';
+import {Tooltip} from 'bootstrap';
 
 
 import Popper from '@popperjs/core/dist/umd/popper.js';
@@ -10,7 +9,8 @@ try {
     window.Popper = Popper;
     window.$ = window.jQuery = require('jquery');
     require('bootstrap');
-} catch (e) {}
+} catch (e) {
+}
 
 window.bootstrap = bootstrap;
 
@@ -23,5 +23,8 @@ document.querySelectorAll('.btn-clipboard').forEach((button) => {
         tooltip.hide();
     });
 });
+
+require('light-switch-bootstrap/switch');
+//window.lightswitchbootstrap();
 
 //https://stackoverflow.com/questions/46643667/javascript-function-is-not-defined-with-laravel-mix

@@ -22,5 +22,8 @@
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.45.1",
         "sass-loader": "^12.4.0"
+    },
+    "dependencies": {
+        "light-switch-bootstrap": "^0.1.3"
     }
 }
