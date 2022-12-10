@@ -23,7 +23,7 @@
 </head>
 <body class="font-sans antialiased">
 @if( !App::environment(['Production','prd','PROD']))
-    <div class="md:visible ribbon ribbon-top-left"><span>{{App::environment()}} Test</span></div>
+    <div class="md:visible ribbon ribbon-top-left"><span>{{App::environment()}} Test @version</span></div>
 @endif
 <x-jet-banner/>
 
