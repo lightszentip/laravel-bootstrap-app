@@ -10,18 +10,18 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@popperjs/core": "^2.11.0",
-        "axios": "^0.21",
-        "bootstrap": "^5.1.3",
-        "bootstrap-icons": "^1.7.2",
-        "jquery": "^3.6.0",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "postcss-import": "^14.0.1",
-        "resolve-url-loader": "^4.0.0",
-        "sass": "^1.45.1",
-        "sass-loader": "^12.4.0"
+        "@popperjs/core": "^2.11.6",
+        "axios": "^1.2.1",
+        "bootstrap": "^5.2.3",
+        "bootstrap-icons": "^1.10.2",
+        "jquery": "^3.6.1",
+        "laravel-mix": "^6.0.49",
+        "lodash": "^4.17.21",
+        "postcss": "^8.4.19",
+        "postcss-import": "^15.1.0",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.56.2",
+        "sass-loader": "^13.2.0"
     },
     "dependencies": {
         "light-switch-bootstrap": "^0.1.3"
