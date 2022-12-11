@@ -42,3 +42,8 @@ php artisan serve
 @version('full')
 @version('compact')
 ````
+
+## Functions
+* Laravel Changelog - see https://github.com/markwalet/laravel-changelog
+* Version Handling - see https://github.com/antonioribeiro/version
+* 

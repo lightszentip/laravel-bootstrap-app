@@ -13,6 +13,7 @@
         "laravel/sanctum": "^v3.0.1",
         "laravel/tinker": "^v2.7.3",
         "livewire/livewire": "^v2.10.7",
+        "markwalet/laravel-changelog": "^1.7",
         "pragmarx/version": "^1.3"
     },
     "require-dev": {
@@ -37,8 +38,7 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan version:refresh"
+            "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
