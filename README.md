@@ -29,5 +29,16 @@ SESSION_DRIVER=file
 
 ````markdown
 npm run dev
+php artisan migrate
 php artisan serve
+````
+
+## Config
+
+### Version in Blade
+
+````blade
+@version
+@version('full')
+@version('compact')
 ````

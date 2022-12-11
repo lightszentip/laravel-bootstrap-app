@@ -1,13 +1,14 @@
 mode: 'absorb' # or 'increment'
 blade-directive: version
 current:
-  label: v
+  label:
   major: 1
   minor: 0
   patch: 0
-  prerelease:
+  prerelease: alpha
+  format: '{$major}.{$minor}.{$patch}-{$prerelease}'
   buildmetadata:
-  commit: 100001
+  commit: 1001
   timestamp:
     mode: absorb
     year:
@@ -45,11 +46,11 @@ format:
   prerelease: "{$prerelease}"
   buildmetadata: "{$buildmetadata}"
   commit: "{$commit}"
-  version: 'version {$major}.{$minor}.{$patch} (commit {$commit})'
-  version-only: 'version {$major}.{$minor}.{$patch}'
+  version: '{$major}.{$minor}.{$patch} (commit {$commit})'
+  version-only: '{$major}.{$minor}.{$patch}'
   ## Bracket enclosed expressions "[.?{$variable}]" are only rendered if the ?={$variable} is filled
   full: '{$version-only}[.?={$prerelease}][+?={$buildmetadata}] (commit {$commit})'
-  compact: "v{$major}.{$minor}.{$patch}-{$commit}"
+  compact: "{$major}.{$minor}.{$patch}-{$commit}"
   timestamp-year: '{$timestamp.year}'
   timestamp-month: '{$timestamp.month}'
   timestamp-day: '{$timestamp.day}'

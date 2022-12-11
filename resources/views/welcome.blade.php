@@ -35,7 +35,7 @@
 
 <div class="container-fluid px-0">
     @if( !App::environment(['Production','prd','PROD']))
-        <div class="md:visible ribbon ribbon-top-left"><span>{{App::environment()}} @version</span></div>
+        <div class="md:visible ribbon ribbon-top-left"><span> <small>{{App::environment()}}@version('compact')</small></span></div>
     @endif
     <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
         <!-- Navbar content -->
