@@ -63,8 +63,8 @@
 </head>
 <body class="text-center">
 @if( !App::environment(['Production','prd','PROD']))
-    <div class="invisible md:visible ribbon ribbon-top-left"><span>{{App::environment()}} Test</span></div>
-    <div class="ribbon ribbon-top-right"><span>{{App::environment()}} Test</span></div>
+    <div class="invisible md:visible ribbon ribbon-top-left"><span>{{App::environment()}} @version</span></div>
+    <div class="ribbon ribbon-top-right"><span>{{App::environment()}} @version</span></div>
 @endif
 
 

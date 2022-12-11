@@ -35,7 +35,7 @@
 
 <div class="container-fluid px-0">
     @if( !App::environment(['Production','prd','PROD']))
-        <div class="md:visible ribbon ribbon-top-left"><span>{{App::environment()}} Test</span></div>
+        <div class="md:visible ribbon ribbon-top-left"><span>{{App::environment()}} @version</span></div>
     @endif
     <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
         <!-- Navbar content -->
@@ -114,7 +114,7 @@
                 v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}
                 ) </p>
             @endif
-            &copy; Tobi 2021-<?php echo date("Y"); ?>
+            &copy; lighszentip 2021-<?php echo date("Y"); ?>
         </div>
     </footer>
 </div>
