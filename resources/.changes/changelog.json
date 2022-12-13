@@ -1,0 +1,25 @@
+{
+    "unreleased": {
+        "name": "tbd",
+        "date": "",
+        "release": false,
+        "minor": []
+    },
+    "0.4.0": {
+        "name": "Init Release",
+        "date": {
+            "date": "2022-12-13 16:01:07.280722",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "release": true,
+        "system": [
+            {
+                "message": "update first settings"
+            },
+            {
+                "message": "setup"
+            }
+        ]
+    }
+}
