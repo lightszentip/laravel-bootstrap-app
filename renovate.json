@@ -1,5 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "schedule": "before 5am every weekday",
     "packageRules": [
     {
       "depTypeList": [ "devDependencies", "require-dev" ],
