@@ -9,9 +9,9 @@ A laravel bootstrap template with jetstream
 
 ````shell
 cp .env.example .env
-php artisan key:generate 
-npm run install
 composer install
+php artisan key:generate 
+npm install
 ````
 
 ## Setup Database
