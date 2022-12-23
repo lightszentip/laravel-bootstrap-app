@@ -1,4 +1,4 @@
-name: Laravel
+name: Laravel Test
 
 on:
   push:
@@ -8,18 +8,33 @@ on:
 
 jobs:
   laravel-tests:
-
-    runs-on: ubuntu-latest
+    name: Test P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ ubuntu-latest ]
+        php: [ 8.2, 8.1, 8.0 ]
+        laravel: [ 9.* ]
+        stability: [ prefer-lowest, prefer-stable ]
+        include:
+          - laravel: 9.*
+            testbench: 7.*
 
     steps:
     - uses: shivammathur/setup-php@189e8e6ec0f2daf4e4d26cdfeacdaf52d56b46a9
       with:
-        php-version: '8.0'
+        php-version: ${{ matrix.php }}
+        extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Install NPM dependencies
+      run: npm install
+    - name: Compile assets
+      run: npm run production
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
@@ -33,3 +48,5 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+    - name: Run security checks 👮
+      uses: symfonycorp/security-checker-action@v5

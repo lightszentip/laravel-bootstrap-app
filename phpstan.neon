@@ -1,0 +1,11 @@
+# phpstan.neon
+parameters:
+    level: 0 #because 1 have a problem with laravel create in models
+    paths:
+        - ../app
+        - ../tests/architecture
+services:
+    -
+        class: Tests\Architecture\ArchitectureTest
+        tags:
+            - phpat.test

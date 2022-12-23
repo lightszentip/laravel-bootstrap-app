@@ -11,30 +11,12 @@
 ## Show Version
 
 ````shell
-php artisan version:show
+php artisan changelog:show-version
 ````
 
 ## Update version
 
-### Patch
 
 ````shell
-php artisan version:patch   
+php artisan changelog:release
 ````
-
-### Minor
-
-````shell
-php artisan version:minor   
-````
-
-### Major
-
-````shell
-php artisan version:major   
-````
-
-
-## For more
-
-see https://github.com/antonioribeiro/version/tree/1.x
