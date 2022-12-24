@@ -52,7 +52,7 @@ jobs:
         run: ./vendor/bin/psalm
 
       - name: phpstan
-        run: ./vendor/bin/phpstan analyse app tests -l 0 #set level for more checks
+        run: ./vendor/bin/phpstan analyse app tests -l 0 #set level for more checks php -d memory_limit=2G vendor/bin/phpstan analyse app tests -l 1
 
   php-cs-fixer:
     name: PHP-CS-Fixer

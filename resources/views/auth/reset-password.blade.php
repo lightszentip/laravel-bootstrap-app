@@ -12,9 +12,10 @@
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}"/>
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email"
-                             :value="old('email', $request->email)" required autofocus/>
+                <x-jet-label for="username" value="{{ __('username') }}"/>
+                <x-jet-input id="username" class="block mt-1 w-full" type="username" name="username"
+                             :value="old('username', $request->email)" required autofocus/>
+
             </div>
 
             <div class="mt-4">

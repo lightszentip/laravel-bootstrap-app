@@ -33,6 +33,10 @@ vendor/bin/php-cs-fixer fix src
 
 ### PHPStan
 
+For LAravel: composer require nunomaduro/larastan:^2.0 --dev
+
+https://github.com/nunomaduro/larastan
+
 ````composer require --dev phpstan/phpstan````
 
 ````shell
@@ -141,3 +145,20 @@ composer require --dev psalm/plugin-phpunit && vendor/bin/psalm-plugin enable ps
 https://github.com/phpro/grumphp
 
 https://github.com/squizlabs/PHP_CodeSniffer
+
+### Autogenerate
+
+#### CRUD Generator
+
+````shell
+composer require mrdebug/crudgen --dev
+composer require laravelcollective/html
+
+#php artisan make:crud nameOfYourCrud "column1:type, column2"
+php artisan make:crud post "title:string, content:text"
+````
+
+more see https://github.com/misterdebug/crud-generator-laravel
+
+### Security
+https://github.com/GrahamCampbell/Laravel-Security

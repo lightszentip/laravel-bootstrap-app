@@ -1,6 +1,10 @@
 # phpstan.neon
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+    - vendor/phpat/phpat/extension.neon
+
 parameters:
-    level: 0 #because 1 have a problem with laravel create in models
+    level: 1 #because 1 have a problem with laravel create in models
     paths:
         - ../app
         - ../tests/architecture

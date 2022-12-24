@@ -1,0 +1,37 @@
+<x-app-layout>
+    <div class="container">
+
+        <div class="py-12">
+            		<div class="d-flex justify-content-end mb-3"><a href="{{ route('DummyVariable.create') }}" class="btn btn-info">Create</a></div>
+
+                	<table class="table table-bordered">
+                		<thead>
+                			<tr>
+                				<th>id</th>
+                DummyHeaderTable
+                				<th>Action</th>
+                			</tr>
+                		</thead>
+                		<tbody>
+                			@foreach(DummyCreateVariable$ as DummyCreateVariableSing$)
+
+                				<tr>
+                					<td>{{ DummyCreateVariableSing$->id }}</td>
+                DummyIndexTable
+                					<td>
+                						<div class="d-flex gap-2">
+                                            <a href="{{ route('DummyVariable.show', [DummyCreateVariableSing$->id]) }}" class="btn btn-info">Show</a>
+                                            <a href="{{ route('DummyVariable.edit', [DummyCreateVariableSing$->id]) }}" class="btn btn-primary">Edit</a>
+                                            {!! Form::open(['method' => 'DELETE','route' => ['DummyVariable.destroy', DummyCreateVariableSing$->id]]) !!}
+                                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                            {!! Form::close() !!}
+                                        </div>
+                					</td>
+                				</tr>
+
+                			@endforeach
+                		</tbody>
+                	</table>
+        </div>
+    </div>
+</x-app-layout>
