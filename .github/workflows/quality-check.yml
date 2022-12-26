@@ -44,7 +44,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer install --prefer-dist --no-interaction
+          composer install --prefer-dist --no-interaction --dev
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
@@ -71,7 +71,7 @@ jobs:
           extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
 
       - name: Install Dependencies
-        run: composer install --prefer-dist
+        run: composer install --prefer-dist --dev --no-interaction
 
       - name: Fix Style
         run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no
@@ -115,7 +115,7 @@ jobs:
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction --dev
 
       - name: List Installed Dependencies
         run: composer show -D
