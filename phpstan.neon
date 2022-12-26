@@ -8,6 +8,9 @@ parameters:
     paths:
         - ./app
         - ./tests/Architecture
+        excludePaths:
+            analyse:
+                - ./tests/Pest.php
 services:
     -
         class: Tests\Architecture\ArchitectureTest

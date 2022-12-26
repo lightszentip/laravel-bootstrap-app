@@ -12,8 +12,7 @@ use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
-
-    function __construct()
+    public function __construct()
     {
         //Check permission for this controller all functions
         $this->middleware('can:role list', ['only' => ['index','show']]);
@@ -27,7 +26,7 @@ class RoleController extends Controller
      */
     public function index(): View|Factory|Application
     {
-        $roles = (new Role)->newQuery();
+        $roles = (new Role())->newQuery();
         if (request()->has('search')) {
             $roles->where('name', 'Like', '%' . request()->input('search') . '%');
         }
@@ -43,9 +42,8 @@ class RoleController extends Controller
             $roles->latest();
         }
         $roles = $roles->paginate(5);
-        return view('admin.role.index',compact('roles'))
+        return view('admin.role.index', compact('roles'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-
     }
 
     /**
@@ -73,12 +71,12 @@ class RoleController extends Controller
 
         $role = Role::create($request->all());
 
-        if(! empty($request->permissions)) {
+        if (! empty($request->permissions)) {
             $role->givePermissionTo($request->permissions);
         }
 
         return redirect()->route('role.index')
-            ->with('message','Role created successfully.');
+            ->with('message', 'Role created successfully.');
     }
 
     /**
@@ -124,7 +122,7 @@ class RoleController extends Controller
         $role->syncPermissions($permissions);
 
         return redirect()->route('role.index')
-            ->with('message','Role updated successfully.');
+            ->with('message', 'Role updated successfully.');
     }
 
     /**
@@ -138,6 +136,6 @@ class RoleController extends Controller
         $role->delete();
 
         return redirect()->route('role.index')
-            ->with('message','Role deleted successfully');
+            ->with('message', 'Role deleted successfully');
     }
 }

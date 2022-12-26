@@ -53,7 +53,7 @@ jobs:
         run: ./vendor/bin/psalm
 
       - name: phpstan
-        run: ./vendor/bin/phpstan analyse app tests -l 0 #set level for more checks php -d memory_limit=2G vendor/bin/phpstan analyse app tests -l 1
+        run: ./vendor/bin/phpstan analyse app tests -l 1 #set level for more checks php -d memory_limit=2G vendor/bin/phpstan analyse app tests -l 1
 
       - name: Run security checks 👮
         uses: symfonycorp/security-checker-action@v5
@@ -74,7 +74,7 @@ jobs:
         run: composer install --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Fix Style
-        run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no
+        run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no app
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4

@@ -4,7 +4,6 @@ namespace App\Dto;
 
 class ChangelogItem
 {
-
     private string $issue;
     private string $message;
 
@@ -25,6 +24,4 @@ class ChangelogItem
         }
         return array('message' => $this->message, 'issue' => $this->issue);
     }
-
-
 }
