@@ -16,7 +16,7 @@ jobs:
           coverage: none
 
       - name: Install composer dependencies
-        uses: ramsey/composer-install@v2
+        run: rcomposer install --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Run PHPLoc
         run: php .\vendor\phploc\phploc\phploc src

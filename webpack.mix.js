@@ -11,11 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css').sourceMaps();
-    //.webpackConfig(require('./webpack.config'));
+
 
 if (mix.inProduction()) {
-    mix.version();
-    mix.minify();
+    mix.js('resources/js/app.js', 'public/js')
+        .sass('resources/sass/app.scss', 'public/css').sourceMaps().version().minify('public/js/app.js');
+} else {
+    mix.js('resources/js/app.js', 'public/js')
+        .sass('resources/sass/app.scss', 'public/css').sourceMaps();
+    //.webpackConfig(require('./webpack.config'));
 }

@@ -14,14 +14,15 @@
         "axios": "^1.2.1",
         "bootstrap": "^5.2.3",
         "bootstrap-icons": "^1.10.2",
-        "jquery": "^3.6.1",
+        "jquery": "^3.6.3",
         "laravel-mix": "^6.0.49",
         "lodash": "^4.17.21",
-        "postcss": "^8.4.19",
+        "postcss": "^8.4.20",
         "postcss-import": "^15.1.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.56.2",
-        "sass-loader": "^13.2.0"
+        "sass": "^1.57.1",
+        "sass-loader": "^13.2.0",
+        "webpack": "5.75.0"
     },
     "dependencies": {
         "light-switch-bootstrap": "^0.1.3"
