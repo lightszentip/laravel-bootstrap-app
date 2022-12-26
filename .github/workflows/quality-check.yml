@@ -114,7 +114,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer install --no-interaction --no-scripts --no-progress --prefer-dist
+          composer install --no-interaction --no-progress
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction  --no-scripts
           composer config --no-plugins allow-plugins.pestphp/pest-plugin true
