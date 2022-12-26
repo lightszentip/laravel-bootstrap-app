@@ -121,10 +121,10 @@ jobs:
         run: composer show -D
 
       - name: Execute tests
-        run: vendor/bin/pest
+        run: ./vendor/bin/pest
 
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
-        run: vendor/bin/phpunit
+        run: ./vendor/bin/phpunit
