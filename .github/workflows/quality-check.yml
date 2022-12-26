@@ -76,10 +76,10 @@ jobs:
       - name: Fix Style
         run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no app
 
-      - name: Commit Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Fix styling changes
+#      - name: Commit Changes
+#        uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: Fix styling changes
 
   test:
     runs-on: ${{ matrix.os }}
