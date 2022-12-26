@@ -64,8 +64,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: PHP-CS-Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v1
+        with:
+          php-version: '7.4'
+          extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist
+
+      - name: Fix Style
+        run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fix styling changes
 
   test:
     runs-on: ${{ matrix.os }}
