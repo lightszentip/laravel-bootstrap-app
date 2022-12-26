@@ -16,10 +16,10 @@ jobs:
           coverage: none
 
       - name: Install composer dependencies
-        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
 
       - name: Run PHPLoc
-        run: php .\vendor\phploc\phploc\phploc src
+        run: php ./vendor/phploc/phploc/phploc src
 
 #Out of memory
      # - name: PHPMD run
