@@ -24,7 +24,7 @@
         "friendsofphp/php-cs-fixer": "^3.13",
         "laravel/sail": "^v1.16.3",
         "mockery/mockery": "^1.5.1",
-        "mrdebug/crudgen": "^1.9",
+        "mrdebug/crudgen": "^1.9.2",
         "nunomaduro/collision": "^v6.3.1",
         "nunomaduro/larastan": "2.0",
         "pestphp/pest-plugin-laravel": "^1.3",
