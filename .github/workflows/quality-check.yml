@@ -67,11 +67,11 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v1
         with:
-          php-version: '7.4'
+          php-version: '8.0'
           extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
 
       - name: Install Dependencies
-        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
+        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Fix Style
         run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no

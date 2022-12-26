@@ -7,7 +7,7 @@ parameters:
     level: 1 #because 1 have a problem with laravel create in models
     paths:
         - ./app
-        - ./tests/architecture
+        - ./tests/Architecture
 services:
     -
         class: Tests\Architecture\ArchitectureTest
