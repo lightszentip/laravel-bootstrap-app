@@ -114,7 +114,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer install --no-interaction --no-progress  --dev
+          composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
