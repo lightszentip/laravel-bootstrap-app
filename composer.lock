@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "190c4d36a9a64c1b65cf2b10aec74c81",
+    "content-hash": "1869ce62ee32052cfa1267d52fe82216",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2278,16 +2278,16 @@
         },
         {
             "name": "lightszentip/laravel-release-changelog-generator",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lightszentip/laravel-release-changelog-generator.git",
-                "reference": "52f9f1c7b66e41a5c3215462aaadf2a7c5c5a610"
+                "reference": "d6d09eff3df49d9eb9c244ffa61113409f88158a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lightszentip/laravel-release-changelog-generator/zipball/52f9f1c7b66e41a5c3215462aaadf2a7c5c5a610",
-                "reference": "52f9f1c7b66e41a5c3215462aaadf2a7c5c5a610",
+                "url": "https://api.github.com/repos/lightszentip/laravel-release-changelog-generator/zipball/d6d09eff3df49d9eb9c244ffa61113409f88158a",
+                "reference": "d6d09eff3df49d9eb9c244ffa61113409f88158a",
                 "shasum": ""
             },
             "require": {
@@ -2346,9 +2346,9 @@
             ],
             "support": {
                 "issues": "https://github.com/lightszentip/laravel-release-changelog-generator/issues",
-                "source": "https://github.com/lightszentip/laravel-release-changelog-generator/tree/0.2.0"
+                "source": "https://github.com/lightszentip/laravel-release-changelog-generator/tree/0.2.1"
             },
-            "time": "2022-12-23T14:33:54+00:00"
+            "time": "2022-12-26T20:50:50+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -12414,16 +12414,16 @@
         },
         {
             "name": "spatie/array-to-xml",
-            "version": "2.17.0",
+            "version": "2.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/array-to-xml.git",
-                "reference": "df0f116f26f6d3f84041e94d46811ee6b64fe7d5"
+                "reference": "5cbec9c6ab17e320c58a259f0cebe88bde4a7c46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/df0f116f26f6d3f84041e94d46811ee6b64fe7d5",
-                "reference": "df0f116f26f6d3f84041e94d46811ee6b64fe7d5",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/5cbec9c6ab17e320c58a259f0cebe88bde4a7c46",
+                "reference": "5cbec9c6ab17e320c58a259f0cebe88bde4a7c46",
                 "shasum": ""
             },
             "require": {
@@ -12462,7 +12462,7 @@
                 "xml"
             ],
             "support": {
-                "source": "https://github.com/spatie/array-to-xml/tree/2.17.0"
+                "source": "https://github.com/spatie/array-to-xml/tree/2.17.1"
             },
             "funding": [
                 {
@@ -12474,7 +12474,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-13T09:08:39+00:00"
+            "time": "2022-12-26T08:22:07+00:00"
         },
         {
             "name": "spatie/backtrace",
