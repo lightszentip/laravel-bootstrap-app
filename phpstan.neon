@@ -1,13 +1,13 @@
 # phpstan.neon
 includes:
     - ./vendor/nunomaduro/larastan/extension.neon
-    - vendor/phpat/phpat/extension.neon
+    - ./vendor/phpat/phpat/extension.neon
 
 parameters:
     level: 1 #because 1 have a problem with laravel create in models
     paths:
-        - ../app
-        - ../tests/architecture
+        - ./app
+        - ./tests/architecture
 services:
     -
         class: Tests\Architecture\ArchitectureTest
