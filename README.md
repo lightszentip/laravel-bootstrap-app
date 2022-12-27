@@ -2,6 +2,8 @@
 A laravel bootstrap template with jetstream
 
 [![SL Scan](https://github.com/lightszentip/laravel-boostrap/actions/workflows/shiftleft.yml/badge.svg?branch=main)](https://github.com/lightszentip/laravel-boostrap/actions/workflows/shiftleft.yml)
+[![PHP-Quality](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/quality-check.yml/badge.svg)](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/quality-check.yml)
+[![PHP-LOC and PHPMD](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/phploc.yml/badge.svg)](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/phploc.yml)
 
 [toc]
 
