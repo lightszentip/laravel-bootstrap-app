@@ -116,6 +116,11 @@ jobs:
         run: |
           composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
           composer remove mrdebug/crudgen
+
+      - name: Remove dependencies
+        run: |
+          composer remove mrdebug/crudgen
+
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
