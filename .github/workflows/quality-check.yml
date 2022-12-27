@@ -115,10 +115,11 @@ jobs:
       - name: Install dependencies
         run: |
           composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
+          composer require mrdebug/crudgen --dev
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --no-scripts
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-scripts
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
           composer config --no-plugins allow-plugins.pestphp/pest-plugin true
 
       - name: List Installed Dependencies
