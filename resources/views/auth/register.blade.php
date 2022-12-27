@@ -19,10 +19,18 @@
 
                 <div class="form-floating">
                     <x-jet-input id="email" class="form-control" type="email" name="email" :value="old('email')"
-                                 required/>
+                                 />
                     <x-jet-label for="email" value="{{ __('Email') }}"/>
 
                 </div>
+
+                <div class="form-floating">
+                    <x-jet-input id="username" class="form-control" type="username" name="username" :value="old('username')"
+                                 required/>
+                    <x-jet-label for="username" value="{{ __('Username') }}"/>
+
+                </div>
+
 
                 <div class="form-floating">
                     <x-jet-input id="password" class="form-control" type="password" name="password" required

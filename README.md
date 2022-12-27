@@ -9,9 +9,9 @@ A laravel bootstrap template with jetstream
 
 ````shell
 cp .env.example .env
-php artisan key:generate 
-npm run install
 composer install
+php artisan key:generate 
+npm install
 ````
 
 ## Setup Database
@@ -33,17 +33,37 @@ php artisan migrate
 php artisan serve
 ````
 
-## Config
-
-### Version in Blade
-
-````blade
-@version
-@version('full')
-@version('compact')
-````
 
 ## Functions
-* Laravel Changelog - see https://github.com/markwalet/laravel-changelog
-* Version Handling - see https://github.com/antonioribeiro/version
-* 
+* Role And Permission - see https://github.com/spatie/laravel-permission
+
+### Role and Permission Handling
+
+see [Role And Permission Documentation](doc/role_and_permission.md)
+
+### Changelog and Version Handling
+
+see [Version Handling](doc/version_handling.md)
+
+https://github.com/lightszentip/laravel-release-changelog-generator
+
+````shell
+php artisan changelog:add => Add a new item for changelog
+php artisan changelog:release => Release a new version with use the current version from version plugin
+````
+
+#### Release
+
+````shell
+php artisan changelog:release
+
+ type:
+ > minor
+
+ releasename:
+ > Init Release
+
+````
+
+type: rc, patch, minor, major, timestamp
+

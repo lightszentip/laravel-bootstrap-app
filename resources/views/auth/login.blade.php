@@ -17,10 +17,10 @@
                 @csrf
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
                 <div class="form-floating">
+                    <x-jet-input id="username" class="form-control" type="username" name="username" :value="old('username')"
+                                 required autofocus placeholder="username"/>
+                    <x-jet-label for="username" value="{{ __('Username') }}"/>
 
-                    <x-jet-input id="email" class="form-control" type="email" name="email" :value="old('email')"
-                                 required autofocus placeholder="name@example.com"/>
-                    <x-jet-label for="email" value="{{ __('Email') }}"/>
                 </div>
 
                 <div class="form-floating">

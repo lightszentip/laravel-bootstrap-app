@@ -1,0 +1,27 @@
+
+on: [push, pull_request]
+name: PHP-LOC and PHPMD
+jobs:
+
+  phplocmd:
+    name: phplocmd
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: Install composer dependencies
+        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
+
+      - name: Run PHPLoc
+        run: php ./vendor/phploc/phploc/phploc app
+
+#Out of memory
+     # - name: PHPMD run
+     #   run: php .\vendor\phpmd\phpmd\src\bin\phpmd ./app/ html .\rulesets\codesize.xml --reportfile phpmd.html
+
