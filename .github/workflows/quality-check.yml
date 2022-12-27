@@ -123,10 +123,14 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
-          composer config --no-plugins allow-plugins.pestphp/pest-plugin true
 
       - name: List Installed Dependencies
         run: composer show -D
+
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Generate key
+        run: php artisan key:generate
 
       - name: Execute tests
         env:
