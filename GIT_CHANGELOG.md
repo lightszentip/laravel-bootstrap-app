@@ -1,4 +1,16 @@
 # Changelog
+## [unreleased]
+
+### Miscellaneous Tasks
+
+- Update dependency nunomaduro/larastan to v2.3.1
+- Update orhun/git-cliff-action action to v2
+
+### System
+
+- Add release drafter
+- Update workflow configs
+
 ## [1.0.0] - 2022-12-11
 
 ### Features
