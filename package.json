@@ -25,6 +25,6 @@
         "webpack": "5.75.0"
     },
     "dependencies": {
-        "light-switch-bootstrap": "^0.1.3"
+        "light-switch-bootstrap": "^0.1.4"
     }
 }
