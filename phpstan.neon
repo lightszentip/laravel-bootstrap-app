@@ -1,0 +1,18 @@
+# phpstan.neon
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/phpat/phpat/extension.neon
+
+parameters:
+    level: 1 #because 1 have a problem with laravel create in models
+    paths:
+        - ./app
+        - ./tests/Architecture
+    excludePaths:
+        analyse:
+            - ./tests/Pest.php
+services:
+    -
+        class: Tests\Architecture\ArchitectureTest
+        tags:
+            - phpat.test

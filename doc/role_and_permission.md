@@ -52,3 +52,9 @@ $users = User::permission('edit articles')->get();
 ````
 
 For Middelware see https://spatie.be/docs/laravel-permission/v5/basic-usage/middleware
+
+see also https://github.com/balajidharma/basic-laravel-admin-panel/blob/archive/1.0.5/resources/views/admin/role/create.blade.php
+
+## Add Role to user in DB
+
+INSERT INTO model_has_roles (role_id, model_type, model_id) VALUES (4, 'App\\Models\\User', 1);

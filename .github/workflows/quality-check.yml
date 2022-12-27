@@ -1,0 +1,147 @@
+
+on: [push, pull_request]
+name: PHP-Quality
+jobs:
+  sl-scan:
+    name: slcan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Instructions
+      # 1. Setup JDK, Node.js, Python etc depending on your project type
+      # 2. Compile or build the project before invoking scan
+      #    Example: mvn compile, or npm install or pip install goes here
+      # 3. Invoke Scan with the github token. Leave the workspace empty to use relative url
+
+      - name: Perform Scan
+        uses: ShiftLeftSecurity/scan-action@4d4c04908eff87430482f36340ad5706c14cf9a6
+        env:
+          WORKSPACE: ""
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SCAN_AUTO_BUILD: true
+        with:
+          output: reports
+          # Scan auto-detects the languages in your project. To override uncomment the below variable and set the type
+          # type: credscan,java
+          # type: python
+
+      - name: Upload report
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: reports
+
+  phpstan:
+    name: phpstan-psalm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan --error-format=github
+
+      - name: PSALM
+        run: ./vendor/bin/psalm
+
+      - name: phpstan
+        run: ./vendor/bin/phpstan analyse app tests -l 1 #set level for more checks php -d memory_limit=2G vendor/bin/phpstan analyse app tests -l 1
+
+      - name: Run security checks 👮
+        uses: symfonycorp/security-checker-action@v5
+
+  php-cs-fixer:
+    name: PHP-CS-Fixer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
+
+      - name: Install Dependencies
+        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Fix Style
+        run: ./vendor/bin/php-cs-fixer fix --diff --allow-risky=no app
+
+#      - name: Commit Changes
+#        uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: Fix styling changes
+
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ ubuntu-latest ]
+        php: [ 8.2, 8.1, 8.0 ]
+        laravel: [ 9.* ]
+        stability: [ prefer-lowest, prefer-stable ]
+        include:
+          - laravel: 9.*
+            testbench: 7.*
+
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+          coverage: none
+
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install dependencies
+        run: |
+          composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
+
+      - name: Remove dependencies
+        run: composer remove mrdebug/crudgen --no-interaction --no-scripts --dev
+
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      - name: List Installed Dependencies
+        run: composer show -D
+
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Generate key
+        run: php artisan key:generate
+
+      - name: Execute tests
+        env:
+          SESSION_DRIVER: array
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ":memory:"
+        run: ./vendor/bin/pest
+
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        env:
+          SESSION_DRIVER: array
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ":memory:"
+        run: ./vendor/bin/phpunit
