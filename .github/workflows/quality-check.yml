@@ -117,7 +117,7 @@ jobs:
           composer install --no-interaction --no-scripts --no-progress --prefer-dist --dev
 
       - name: Remove dependencies
-        run: composer remove mrdebug/crudgen --no-interaction --no-scripts
+        run: composer remove mrdebug/crudgen --no-interaction --no-scripts --dev
 
       - name: Install dependencies
         run: |
