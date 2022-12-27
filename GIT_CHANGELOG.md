@@ -1,5 +1,5 @@
 # Changelog
-## [unreleased]
+## [1.1.0] - 2022-12-27
 
 ### Miscellaneous Tasks
 
