@@ -1,0 +1,327 @@
+
+stages:
+  - preparation
+  - building
+  - testing
+  - test
+  - security
+  - generate_executables
+  - release-creation
+
+sast:
+  stage: test
+  tags:
+  - self
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+image: carlosalgms/composer-and-node-ci:php8
+
+composer:
+  tags:
+  - self
+  stage: preparation
+  script:
+    - php -v
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - composer remove mrdebug/crudgen --no-interaction --no-scripts --dev
+    - cp .env.example .env
+    - php artisan key:generate
+  artifacts:
+    paths:
+      - vendor/
+      - .env
+    expire_in: 1 days
+    when: always
+  cache:
+    paths:
+      - vendor/
+
+npm:
+  tags:
+  - self
+  stage: preparation
+  script:
+    - npm --version
+    - npm install --pure-lockfile
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 days
+    when: always
+  cache:
+    paths:
+      - node_modules/
+
+build-assets:
+  tags:
+  - self
+  stage: building
+  # Download the artifacts for these jobs
+  dependencies:
+    - composer
+    - npm
+  script:
+    - npm --version
+    - npm run production --progress false
+  artifacts:
+    paths:
+      - public/css/
+      - public/js/
+      - public/fonts/
+      - public/mix-manifest.json
+    expire_in: 1 days
+    when: always
+
+phpunit:
+  needs:
+  - job: composer
+    artifacts: true
+  - job: build-assets
+    artifacts: true  
+  tags:
+  - self
+  stage: testing
+  # Download the artifacts for these jobs
+  dependencies:
+    - build-assets
+    - composer
+  before_script:
+    - php -v
+    #- touch storage/app/db.sqlite
+    - sed -i '/SESSION_DRIVER/s/=.*/=array/g'  .env
+    - sed -i '/DB_CONNECTION/s/=.*/=sqlite/g'  .env
+    - sed -i '/DB_DATABASE/s/=.*/=":memory:"/g'  .env
+    - php artisan migrate
+  script:
+    - ./vendor/bin/pest
+    - ./vendor/bin/phpunit
+  artifacts:
+    paths:
+      - ./storage/logs # for debugging
+    expire_in: 1 days
+    when: on_failure
+
+#codestyle:
+#  tags:
+#  - self
+#  needs:
+#  - job: composer
+#    artifacts: true  
+#  stage: testing
+#  image: lorisleiva/laravel-docker
+#  script:
+#    - phpcs --extensions=php app
+#  dependencies: []
+
+phpstan:
+  tags:
+  - self
+  needs:
+  - job: composer
+    artifacts: true  
+  stage: testing
+  dependencies:
+    - composer
+  script:
+    - ./vendor/bin/phpstan analyse app tests -l 1
+
+psalm:
+  tags:
+  - self
+  needs:
+  - job: composer
+    artifacts: true  
+  stage: testing
+  script:
+    - ./vendor/bin/psalm
+  dependencies:
+    - composer
+
+phpcpd:
+  tags:
+  - self
+  needs:
+  - job: composer
+    artifacts: true
+  stage: testing
+  script:
+    - test -f phpcpd.phar || curl -L https://phar.phpunit.de/phpcpd.phar -o phpcpd.phar
+    - php phpcpd.phar app/ --min-lines=50
+  dependencies:
+    - composer
+  cache:
+    paths:
+      - phpcpd.phar
+
+#sensiolabs:
+#  tags:
+#  - self
+#  needs:
+#  - job: composer
+#    artifacts: true
+#  stage: security
+#  script:
+#    - test -d security-checker || git clone https://github.com/sensiolabs/security-checker.git
+#    - cd security-checker
+#    - composer install
+#    - php security-checker security:check ../composer.lock
+#  dependencies: []
+#  cache:
+#    paths:
+#      - security-checker/
+
+
+
+release:
+  tags:
+  - self
+  needs:
+  - job: phpunit
+    artifacts: true
+  image: node:17-buster-slim
+  stage: release-creation
+  before_script:
+    - apt-get update && apt-get install -y --no-install-recommends git-core ca-certificates
+    - npm install -g semantic-release @semantic-release/gitlab @semantic-release/changelog conventional-changelog-conventionalcommits @semantic-release/commit-analyzer @semantic-release/git
+  script:
+    - semantic-release
+  only:
+    - main
+
+changelogbuilder:
+  needs:
+  - job: phpunit
+  tags:
+  - self
+  stage: release-creation
+  allow_failure: true
+  image:
+    name: alpine/git:latest
+    entrypoint: [""]
+  script:
+    - echo RELEASE_TAG=$CI_COMMIT_TAG >> variables.env
+    - echo '## Changelog' >> CHANGELOG.md
+    - git tag -l -n9 $CI_COMMIT_TAG >> CHANGELOG_GIT.md
+    - echo '## Commits' >> CHANGELOG.md 
+    - git log --pretty="- %s (%h)" $(git tag --sort=-creatordate | head -2)...$(git tag --sort=-creatordate | head -1) >> CHANGELOG_GIT.md
+    - echo '## Merges' >> CHANGELOG.md 
+    - git log --merges --pretty="- %s (%h)" $(git tag --sort=-creatordate | head -2)...$(git tag --sort=-creatordate | head -1) >> CHANGELOG_GIT.md
+    - echo '## AUTHORS' >> CHANGELOG.md
+    - git log --pretty="- %an%n- %cn" $(git tag --sort=-creatordate | head -2)...$(git tag --sort=-creatordate | head -1) | sort | uniq >> CHANGELOG_GIT.md
+  artifacts:
+    paths:
+      - CHANGELOG_GIT.md
+  only:
+    - tags
+
+changelogbuildermain:
+  needs:
+  - job: phpunit
+  tags:
+  - self
+  stage: release-creation
+  allow_failure: true
+  image:
+    name: alpine/git:latest
+    entrypoint: [""]
+  script:
+    - echo RELEASE_TAG=$CI_COMMIT_TAG >> variables.env
+    - echo '## Changelog' >> CHANGELOG.md
+    - git tag -l -n9 $CI_COMMIT_TAG >> CHANGELOG_GIT.md
+    - echo '## Commits' >> CHANGELOG.md 
+    - git log --pretty="- %s (%h)" $(git tag --sort=-creatordate | head -2)...$(git tag --sort=-creatordate | head -1) >> CHANGELOG_GIT.md
+    - echo '## Merges' >> CHANGELOG.md 
+    - git log --merges --pretty="- %s (%h)" $(git tag --sort=-creatordate | head -2)...$(git tag --sort=-creatordate | head -1) >> CHANGELOG_GIT.md
+    - echo '## AUTHORS' >> CHANGELOG.md
+    - git log --pretty="- %an%n- %cn" $(git tag --sort=-creatordate | head -2)...$(git tag --sort=-creatordate | head -1) | sort | uniq >> CHANGELOG_GIT.md
+    - git config user.email "my-email@email.com"
+    - git config user.name "ci-bot"
+  #  - git remote add gitlab_origin https://oauth2:$ACCESS_TOKEN@gitlab.com/path-to-project.git
+    - git add CHANGELOG_GIT.md
+    - git commit -m "push back from pipeline"
+    - git push origin HEAD:main # gitlab_origin HEAD:main -o ci.skip # prevent triggering pipeline again
+  artifacts:
+    paths:
+      - CHANGELOG_GIT.md
+  only:
+    - main
+
+
+release_creation:
+  tags:
+  - self
+  image: registry.gitlab.com/gitlab-org/release-cli:latest  
+  stage: release-creation
+  allow_failure: true
+  script:
+    - echo test
+  only:
+    - tags
+  needs:
+    - job: changelogbuilder
+      artifacts: true
+  artifacts:
+    paths:
+    - CHANGELOG_GIT.md
+    expire_in: never
+  release:
+    name: $CI_COMMIT_TAG
+    description: CHANGELOG_GIT.md
+    tag_name: $CI_COMMIT_TAG 
+
+generate_executables:
+  tags:
+  - self
+  needs:
+  - job: phpunit
+  stage: generate_executables
+  before_script:
+    - echo $CI_JOB_ID
+    # Writing GE_JOB_ID variable to environment file, will need the value in the next stage.
+    - echo GE_JOB_ID=$CI_JOB_ID >> generate_executables.env
+    - php -v
+    - composer install --prefer-dist --no-dev --no-ansi --no-interaction --no-progress --no-scripts
+    - npm install
+    - npm run prod
+  script:
+    # Commands responsible to generate the artifacts.
+    - zip -X -r app.zip . -x *.git* -x .github/*  -x ./node_modules/*
+    - echo "Executables generated successfully."
+  artifacts:
+    paths:
+      # Should be relative to your root directory
+      - app.zip
+    reports:
+      # To ensure we've access to this file in the next stage
+      dotenv: generate_executables.env
+  only:
+    # Can be removed if you want to trigger the pipeline for merge request or other branches
+    - tags
+
+release-artifact:
+  tags:
+  - self
+  stage: release-creation
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  script:
+    - echo 'running release_job'
+    - echo 'Previous Job ID is printed below'
+    - echo $GE_JOB_ID
+  # Specifying that this job requires artifacts from the previous job to succeed
+  needs:
+    - job: generate_executables
+      artifacts: true
+  release:
+    name: 'Release Executables $CI_COMMIT_SHORT_SHA'
+    description: 'Created using the release-cli'
+    # tag_name is a mendatory field and can not be an empty string
+    tag_name: '$CI_COMMIT_SHORT_SHA'
+    assets:
+      links:
+        - name: 'Package'
+          url: 'https://gitlab.com/group/laravel-bootstrap-app/-/jobs/${GE_JOB_ID}/artifacts/file/app.zip'
+  only:
+    # Can be removed if you want to trigger the pipeline for merge request or other branches
+    - tags
