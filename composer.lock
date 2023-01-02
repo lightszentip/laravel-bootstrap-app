@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43da92910f003d5fda135dedfb8d12f8",
+    "content-hash": "5bf5044e892ea8ce1e9bd667aa1886e0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -8711,16 +8711,16 @@
         },
         {
             "name": "nunomaduro/larastan",
-            "version": "2.3.1",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/larastan.git",
-                "reference": "2217d0725884fd68f029fe22919edd3f910683d3"
+                "reference": "32ad25904dc8fbfdae4d4e431a27ba3bad2979cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/2217d0725884fd68f029fe22919edd3f910683d3",
-                "reference": "2217d0725884fd68f029fe22919edd3f910683d3",
+                "url": "https://api.github.com/repos/nunomaduro/larastan/zipball/32ad25904dc8fbfdae4d4e431a27ba3bad2979cc",
+                "reference": "32ad25904dc8fbfdae4d4e431a27ba3bad2979cc",
                 "shasum": ""
             },
             "require": {
@@ -8784,7 +8784,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/larastan/issues",
-                "source": "https://github.com/nunomaduro/larastan/tree/2.3.1"
+                "source": "https://github.com/nunomaduro/larastan/tree/2.3.4"
             },
             "funding": [
                 {
@@ -8804,7 +8804,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-12-23T14:56:31+00:00"
+            "time": "2023-01-02T12:13:26+00:00"
         },
         {
             "name": "orchestra/testbench",
@@ -9891,21 +9891,22 @@
         },
         {
             "name": "phpmyadmin/sql-parser",
-            "version": "5.5.0",
+            "version": "5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmyadmin/sql-parser.git",
-                "reference": "8ab99cd0007d880f49f5aa1807033dbfa21b1cb5"
+                "reference": "63f2f77847586864a661ef009ae687dbdda0a9f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmyadmin/sql-parser/zipball/8ab99cd0007d880f49f5aa1807033dbfa21b1cb5",
-                "reference": "8ab99cd0007d880f49f5aa1807033dbfa21b1cb5",
+                "url": "https://api.github.com/repos/phpmyadmin/sql-parser/zipball/63f2f77847586864a661ef009ae687dbdda0a9f1",
+                "reference": "63f2f77847586864a661ef009ae687dbdda0a9f1",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0",
-                "symfony/polyfill-mbstring": "^1.3"
+                "symfony/polyfill-mbstring": "^1.3",
+                "symfony/polyfill-php80": "^1.16"
             },
             "conflict": {
                 "phpmyadmin/motranslator": "<3.0"
@@ -9954,13 +9955,25 @@
                 "analysis",
                 "lexer",
                 "parser",
-                "sql"
+                "query linter",
+                "sql",
+                "sql lexer",
+                "sql linter",
+                "sql parser",
+                "sql syntax highlighter",
+                "sql tokenizer"
             ],
             "support": {
                 "issues": "https://github.com/phpmyadmin/sql-parser/issues",
                 "source": "https://github.com/phpmyadmin/sql-parser"
             },
-            "time": "2021-12-09T04:31:52+00:00"
+            "funding": [
+                {
+                    "url": "https://www.phpmyadmin.net/donate/",
+                    "type": "other"
+                }
+            ],
+            "time": "2023-01-02T05:36:07+00:00"
         },
         {
             "name": "phpowermove/docblock",
