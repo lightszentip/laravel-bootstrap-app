@@ -1,6 +1,11 @@
 # Changelog
 ## [unreleased]
 
+### Miscellaneous Tasks
+
+- Update node.js to v19
+- Update dependency nunomaduro/larastan to v2.3.4
+
 ### System
 
 - Add gitlab-ci pipeline
