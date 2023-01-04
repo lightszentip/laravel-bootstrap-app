@@ -9,6 +9,7 @@
 ### System
 
 - Add gitlab-ci pipeline
+- Update dependencies
 
 ## [1.1.0] - 2022-12-27
 
