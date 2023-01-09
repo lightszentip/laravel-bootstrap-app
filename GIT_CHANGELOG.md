@@ -3,6 +3,12 @@
 
 ### Miscellaneous Tasks
 
+- Update mikepenz/release-changelog-builder-action action to v3.6.0
+
+## [1.1.1] - 2023-01-04
+
+### Miscellaneous Tasks
+
 - Update node.js to v19
 - Update dependency nunomaduro/larastan to v2.3.4
 
