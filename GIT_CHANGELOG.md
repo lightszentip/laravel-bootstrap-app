@@ -5,6 +5,10 @@
 
 - Update mikepenz/release-changelog-builder-action action to v3.6.0
 
+### Build
+
+- Bump mrdebug/crudgen from 1.9.2 to 1.9.3
+
 ## [1.1.1] - 2023-01-04
 
 ### Miscellaneous Tasks
