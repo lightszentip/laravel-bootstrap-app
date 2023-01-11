@@ -67,7 +67,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: '8.1'
           extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
 
       - name: Install Dependencies
@@ -87,7 +87,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ ubuntu-latest ]
-        php: [ 8.2, 8.1, 8.0 ]
+        php: [ 8.2, 8.1]
         laravel: [ 9.* ]
         stability: [ prefer-lowest, prefer-stable ]
         include:
