@@ -8425,16 +8425,16 @@
         },
         {
             "name": "mrdebug/crudgen",
-            "version": "1.9.3",
+            "version": "1.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/misterdebug/crud-generator-laravel.git",
-                "reference": "98397abee2e0b29c866a44d1a0c17533cec6a18d"
+                "reference": "55bc6f97f723cf295cdeb7c4616554af4150c6d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misterdebug/crud-generator-laravel/zipball/98397abee2e0b29c866a44d1a0c17533cec6a18d",
-                "reference": "98397abee2e0b29c866a44d1a0c17533cec6a18d",
+                "url": "https://api.github.com/repos/misterdebug/crud-generator-laravel/zipball/55bc6f97f723cf295cdeb7c4616554af4150c6d6",
+                "reference": "55bc6f97f723cf295cdeb7c4616554af4150c6d6",
                 "shasum": ""
             },
             "require": {
@@ -8466,9 +8466,9 @@
             "description": "Create a Laravel Crud in a few seconds",
             "support": {
                 "issues": "https://github.com/misterdebug/crud-generator-laravel/issues",
-                "source": "https://github.com/misterdebug/crud-generator-laravel/tree/1.9.3"
+                "source": "https://github.com/misterdebug/crud-generator-laravel/tree/1.9.4"
             },
-            "time": "2023-01-09T19:33:29+00:00"
+            "time": "2023-01-22T20:10:44+00:00"
         },
         {
             "name": "myclabs/deep-copy",
