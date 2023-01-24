@@ -4679,12 +4679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "2e2ac7582e90ba5ae5a37a704634f4bc6ac882f0"
+                "reference": "de3acc2fbc81d26957b551aabeea8b6cb0dc1f72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/2e2ac7582e90ba5ae5a37a704634f4bc6ac882f0",
-                "reference": "2e2ac7582e90ba5ae5a37a704634f4bc6ac882f0",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/de3acc2fbc81d26957b551aabeea8b6cb0dc1f72",
+                "reference": "de3acc2fbc81d26957b551aabeea8b6cb0dc1f72",
                 "shasum": ""
             },
             "require": {
@@ -4751,7 +4751,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-13T09:23:11+00:00"
+            "time": "2023-01-23T14:48:49+00:00"
         },
         {
             "name": "symfony/mime",
@@ -10514,16 +10514,16 @@
         },
         {
             "name": "psalm/plugin-laravel",
-            "version": "v2.3.1",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/psalm/psalm-plugin-laravel.git",
-                "reference": "294c30f5883f37d425117474bd5406eb0c3ed8fe"
+                "reference": "e6eaed7d935663acce940fc70ca2c7bd2ddb2d8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/psalm-plugin-laravel/zipball/294c30f5883f37d425117474bd5406eb0c3ed8fe",
-                "reference": "294c30f5883f37d425117474bd5406eb0c3ed8fe",
+                "url": "https://api.github.com/repos/psalm/psalm-plugin-laravel/zipball/e6eaed7d935663acce940fc70ca2c7bd2ddb2d8e",
+                "reference": "e6eaed7d935663acce940fc70ca2c7bd2ddb2d8e",
                 "shasum": ""
             },
             "require": {
@@ -10578,9 +10578,9 @@
             "homepage": "https://github.com/psalm/psalm-plugin-laravel",
             "support": {
                 "issues": "https://github.com/psalm/psalm-plugin-laravel/issues",
-                "source": "https://github.com/psalm/psalm-plugin-laravel/tree/v2.3.1"
+                "source": "https://github.com/psalm/psalm-plugin-laravel/tree/v2.4.0"
             },
-            "time": "2023-01-22T16:53:12+00:00"
+            "time": "2023-01-23T16:54:33+00:00"
         },
         {
             "name": "psalm/plugin-phpunit",
@@ -12545,16 +12545,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "5.5.0",
+            "version": "5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "b63061a27f2683ec0f3509012bb22daab3b65b61"
+                "reference": "e784128902dfe01d489c4123d69918a9f3c1eac5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/b63061a27f2683ec0f3509012bb22daab3b65b61",
-                "reference": "b63061a27f2683ec0f3509012bb22daab3b65b61",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/e784128902dfe01d489c4123d69918a9f3c1eac5",
+                "reference": "e784128902dfe01d489c4123d69918a9f3c1eac5",
                 "shasum": ""
             },
             "require": {
@@ -12643,9 +12643,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vimeo/psalm/issues",
-                "source": "https://github.com/vimeo/psalm/tree/5.5.0"
+                "source": "https://github.com/vimeo/psalm/tree/5.6.0"
             },
-            "time": "2023-01-23T01:50:35+00:00"
+            "time": "2023-01-23T20:32:47+00:00"
         },
         {
             "name": "zbateson/mail-mime-parser",
