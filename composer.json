@@ -9,7 +9,7 @@
         "fruitcake/laravel-cors": "^v3.0.0",
         "graham-campbell/security": "10.0",
         "guzzlehttp/guzzle": "^7.5.0",
-        "laravel/framework": "^9.39.0",
+        "laravel/framework": "^10.0.0",
         "laravel/jetstream": "^v3.0.0",
         "laravel/sanctum": "^v3.0.1",
         "laravel/tinker": "^v2.7.3",
