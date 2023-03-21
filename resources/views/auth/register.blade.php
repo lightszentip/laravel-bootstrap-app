@@ -1,56 +1,56 @@
 <x-guest-layout>
     <main class="form-signin">
-        <x-jet-authentication-card>
+        <x-authentication-card>
             <x-slot name="logo">
-                <x-jet-authentication-card-logo/>
+                <x-authentication-card-logo/>
             </x-slot>
 
-            <x-jet-validation-errors class="mb-4"/>
+            <x-validation-errors class="mb-4"/>
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
                 <div class="form-floating">
 
-                    <x-jet-input id="name" class="form-control" type="text" name="name" :value="old('name')" required
+                    <x-input id="name" class="form-control" type="text" name="name" :value="old('name')" required
                                  autofocus autocomplete="name"/>
-                    <x-jet-label for="name" value="{{ __('Name') }}"/>
+                    <x-label for="name" value="{{ __('Name') }}"/>
                 </div>
 
                 <div class="form-floating">
-                    <x-jet-input id="email" class="form-control" type="email" name="email" :value="old('email')"
+                    <x-input id="email" class="form-control" type="email" name="email" :value="old('email')"
                                  />
-                    <x-jet-label for="email" value="{{ __('Email') }}"/>
+                    <x-label for="email" value="{{ __('Email') }}"/>
 
                 </div>
 
                 <div class="form-floating">
-                    <x-jet-input id="username" class="form-control" type="username" name="username" :value="old('username')"
+                    <x-input id="username" class="form-control" type="username" name="username" :value="old('username')"
                                  required/>
-                    <x-jet-label for="username" value="{{ __('Username') }}"/>
+                    <x-label for="username" value="{{ __('Username') }}"/>
 
                 </div>
 
 
                 <div class="form-floating">
-                    <x-jet-input id="password" class="form-control" type="password" name="password" required
+                    <x-input id="password" class="form-control" type="password" name="password" required
                                  autocomplete="new-password"/>
-                    <x-jet-label for="password" value="{{ __('Password') }}"/>
+                    <x-label for="password" value="{{ __('Password') }}"/>
 
                 </div>
 
                 <div class="form-floating">
-                    <x-jet-input id="password_confirmation" class="form-control" type="password"
+                    <x-input id="password_confirmation" class="form-control" type="password"
                                  name="password_confirmation" required autocomplete="new-password"/>
-                    <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}"/>
+                    <x-label for="password_confirmation" value="{{ __('Confirm Password') }}"/>
 
                 </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="mt-4">
-                        <x-jet-label for="terms">
+                        <x-label for="terms">
                             <div class="flex items-center">
-                                <x-jet-checkbox name="terms" id="terms"/>
+                                <x-checkbox name="terms" id="terms"/>
 
                                 <div class="ml-2">
                                     {!! __('I agree to the :terms_of_service and :privacy_policy', [
@@ -59,7 +59,7 @@
                                     ]) !!}
                                 </div>
                             </div>
-                        </x-jet-label>
+                        </x-label>
                     </div>
                 @endif
 
@@ -68,11 +68,11 @@
                         {{ __('Already registered?') }}
                     </a>
 
-                    <x-jet-button class="ml-4">
+                    <x-button class="ml-4">
                         {{ __('Register') }}
-                    </x-jet-button>
+                    </x-button>
                 </div>
             </form>
-        </x-jet-authentication-card>
+        </x-authentication-card>
     </main>
 </x-guest-layout>

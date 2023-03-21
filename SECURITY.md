@@ -7,8 +7,9 @@ currently being supported with security updates.
 
 | Version | PHP | Supported          |
 |---------|-----|--------------------|
-| 1.0.x   | 8.1 | :white_check_mark: |
-| 1.0.x   | 8.0 | :white_check_mark: |
+| 1.2.x   | 8.1 | :white_check_mark: |
+| 1.1.x   | 8.1 | :x:                |
+| 1.1.x   | 8.0 | :x:                |
 | 1.0.x   | 7.x | :x:                |
 | < 1.0   | *   | :x:                |
 

@@ -5,7 +5,12 @@ A laravel bootstrap template with jetstream
 [![PHP-Quality](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/quality-check.yml/badge.svg)](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/quality-check.yml)
 [![PHP-LOC and PHPMD](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/phploc.yml/badge.svg)](https://github.com/lightszentip/laravel-bootstrap-app/actions/workflows/phploc.yml)
 
-[toc]
+## Versions
+
+| Release   | Laravel                   | PHP     |
+|:----------|:--------------------------|:--------|
+| **1.2.x** | `10.*`                    | `>=8.1` |
+| **1.1.x** | `9.*`                     | `>=8.0` |
 
 ## First Setup
 

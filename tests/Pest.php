@@ -39,7 +39,21 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
-{
-    // ..
-}
+//Architecture Tests
+
+test('models')
+    ->expect('App\Models')
+    ->toOnlyUse('Illuminate\Database');
+
+test('modelsControllers')
+    ->expect('App\Models')
+    ->toOnlyBeUsedIn('App\Http\Controllers');
+test('globals')
+    ->expect(['dd', 'dump'])
+    ->not->toBeUsed();
+test('facades')
+    ->expect('Illuminate\Support\Facades')
+    ->not->toBeUsed();
+test('globalsRequest')
+    ->expect('request')
+    ->not->toBeUsedIn('App\Models');
