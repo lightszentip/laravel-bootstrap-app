@@ -8,13 +8,25 @@
       "depTypeList": [ "devDependencies", "require-dev" ],
       "updateTypes": [ "patch", "minor", "digest"],
       "groupName": "devDependencies (non-major)"
+    },
+{
+      "groupName": "all non-minor dependencies",
+      "groupSlug": "all-patch",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ]
     }
   ],
+    "lockFileMaintenance": { "enabled": true },
   "extends": [
     "config:base",
     ":preserveSemverRanges",
     ":dependencyDashboard",
     ":rebaseStalePrs",
+    ":automergePatch",  
     ":enableVulnerabilityAlertsWithLabel('security')",
     "group:recommended"
   ]
