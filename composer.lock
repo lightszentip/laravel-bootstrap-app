@@ -9127,16 +9127,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v7.3.2",
+            "version": "v7.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "9e111c8d8e88862d334879853dc849542e4b015a"
+                "reference": "c680af93e414110b36056029f63120e6bc78f6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/9e111c8d8e88862d334879853dc849542e4b015a",
-                "reference": "9e111c8d8e88862d334879853dc849542e4b015a",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/c680af93e414110b36056029f63120e6bc78f6e3",
+                "reference": "c680af93e414110b36056029f63120e6bc78f6e3",
                 "shasum": ""
             },
             "require": {
@@ -9219,7 +9219,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-03-21T21:02:58+00:00"
+            "time": "2023-03-23T21:41:35+00:00"
         },
         {
             "name": "nunomaduro/larastan",
@@ -9518,21 +9518,21 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "v2.2.1",
+            "version": "v2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "221ac62f03e0236275b6ebd36ad35667e0e50acb"
+                "reference": "cc6bd59df99bf8af1ae3b31d583754eec321ca02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/221ac62f03e0236275b6ebd36ad35667e0e50acb",
-                "reference": "221ac62f03e0236275b6ebd36ad35667e0e50acb",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/cc6bd59df99bf8af1ae3b31d583754eec321ca02",
+                "reference": "cc6bd59df99bf8af1ae3b31d583754eec321ca02",
                 "shasum": ""
             },
             "require": {
                 "brianium/paratest": "^7.1.2",
-                "nunomaduro/collision": "^7.3.2",
+                "nunomaduro/collision": "^7.3.3",
                 "nunomaduro/termwind": "^1.15.1",
                 "pestphp/pest-plugin": "^2.0.0",
                 "pestphp/pest-plugin-arch": "^2.0.1",
@@ -9601,7 +9601,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v2.2.1"
+                "source": "https://github.com/pestphp/pest/tree/v2.2.2"
             },
             "funding": [
                 {
@@ -9613,7 +9613,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-22T11:20:25+00:00"
+            "time": "2023-03-23T21:48:55+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
