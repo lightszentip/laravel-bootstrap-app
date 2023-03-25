@@ -2,6 +2,26 @@
 
 All notable changes to will be documented in this file
 
+## 1.2.0🌌 Beerenberg  - 2023-03-25
+
+### Changes
+
+- Laravel 10
+
+### 📦 Dependencies
+
+- build(deps-dev): bump sass-loader from 13.2.0 to 13.2.1 @dependabot (#113)
+- fix(deps): update dependency laravel/framework to v10 @renovate (#92)
+- chore(deps): update dependency webpack to v5.76.2 @renovate (#107)
+- build(deps-dev): bump jquery from 3.6.3 to 3.6.4 @dependabot (#106)
+- build(deps-dev): bump sass from 1.58.3 to 1.59.3 @dependabot (#110)
+- build(deps-dev): bump webpack from 5.76.0 to 5.76.2 @dependabot (#111)
+- chore(deps): update devdependencies (non-major) @renovate (#104)
+- chore(deps): update codacy/codacy-analysis-cli-action digest to 9acc82f @renovate (#105)
+- chore(deps): update codacy/codacy-analysis-cli-action digest to 3fb1dde @renovate (#103)
+- chore(deps): update mikepenz/release-changelog-builder-action action to v3.7.0 @renovate (#100)
+- fix(deps): update dependency graham-campbell/security to v11 @renovate (#101)
+
 ## 1.1.2 ❄️ Abendhalde - 2023-03-25
 
 ### Changes
