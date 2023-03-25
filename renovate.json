@@ -16,7 +16,8 @@
       ],
       "matchUpdateTypes": [
         "patch"
-      ]
+      ],
+    "automerge" : true,
     }
   ],
     "lockFileMaintenance": { "enabled": true },
