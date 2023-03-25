@@ -3,11 +3,94 @@
 
 ### Miscellaneous Tasks
 
-- Update mikepenz/release-changelog-builder-action action to v3.6.0
+- Update dependency webpack to v5.76.3
+- Update codacy/codacy-analysis-cli-action digest to db33ad5
 
 ### Build
 
+- Bump spatie/laravel-permission from 5.9.1 to 5.10.0
+- Bump pestphp/pest from 2.1.0 to 2.2.1
+- Bump nunomaduro/collision from 7.3.2 to 7.3.3
+- Bump sass from 1.59.3 to 1.60.0
+- Bump pestphp/pest from 2.2.1 to 2.2.2
+
+## [1.2.0] - 2023-03-21
+
+### Bug Fixes
+
+- Update dependency graham-campbell/security to v11
+- Update dependency laravel/framework to v10 (#92)
+
+### Miscellaneous Tasks
+
+- Update mikepenz/release-changelog-builder-action action to v3.7.0
+- Update codacy/codacy-analysis-cli-action digest to 3fb1dde
+- Update codacy/codacy-analysis-cli-action digest to 9acc82f
+- Update devdependencies (non-major)
+- Update dependency webpack to v5.76.2
+
+### Build
+
+- Bump jquery from 3.6.3 to 3.6.4
+- Bump sass from 1.58.3 to 1.59.3
+- Bump webpack from 5.76.0 to 5.76.2
+- Bump sass-loader from 13.2.0 to 13.2.1
+
+## [1.1.2] - 2023-02-25
+
+### Bug Fixes
+
+- Update dependency laravel/jetstream to v3
+
+### Miscellaneous Tasks
+
+- Update mikepenz/release-changelog-builder-action action to v3.6.0
+- Update dependency nunomaduro/larastan to v2.3.5
+- Update dependency nunomaduro/larastan to v2.4.0
+- Update codacy/codacy-analysis-cli-action digest to cfff30e
+- Update dependency nunomaduro/larastan to v2.4.1
+- Update dependency phpunit/phpunit to v10
+- Update mikepenz/release-changelog-builder-action action to v3.6.1
+- Update dependency nunomaduro/collision to v7
+- Update codacy/codacy-analysis-cli-action digest to ef422f6
+
+### Build
+
+- Bump postcss from 8.4.20 to 8.4.21
 - Bump mrdebug/crudgen from 1.9.2 to 1.9.3
+- Bump laravel/tinker from 2.7.3 to 2.8.0
+- Bump laravel/sanctum from 3.1.0 to 3.2.0
+- Bump laravel/sail from 1.17.0 to 1.18.0
+- Bump laravel/jetstream from 2.14.0 to 2.14.1
+- Bump psalm/plugin-laravel from 2.0.2 to 2.1.0
+- Bump psalm/plugin-laravel from 2.1.0 to 2.1.1
+- Bump pestphp/pest-plugin-laravel from 1.3.0 to 1.4.0
+- Bump livewire/livewire from 2.10.8 to 2.11.0
+- Bump spatie/laravel-permission from 5.7.0 to 5.8.0
+- Bump axios from 1.2.2 to 1.2.3
+- Bump laravel/sail from 1.18.0 to 1.18.1
+- Bump laravel/jetstream from 2.14.1 to 2.15.0
+- Bump laravel/sanctum from 3.2.0 to 3.2.1
+- Bump laravel/jetstream from 2.15.0 to 2.16.0
+- Bump psalm/plugin-laravel from 2.1.1 to 2.2.0
+- Bump vimeo/psalm from 5.4.0 to 5.5.0
+- Bump psalm/plugin-laravel from 2.2.0 to 2.3.1
+- Bump mrdebug/crudgen from 1.9.3 to 1.9.4
+- Bump psalm/plugin-laravel from 2.3.1 to 2.4.0
+- Bump vimeo/psalm from 5.5.0 to 5.6.0
+- Bump axios from 1.2.3 to 1.2.4
+- Bump axios from 1.2.4 to 1.2.5
+- Bump sass from 1.57.1 to 1.58.0
+- Bump axios from 1.2.6 to 1.3.0
+- Bump nunomaduro/larastan from 2.3.4 to 2.4.1
+- Bump sass from 1.58.0 to 1.58.3
+- Bump axios from 1.3.0 to 1.3.4
+
+### System
+
+- Remove php support 8.0
+- Update composer.lock
+- Update package-lock.json
 
 ## [1.1.1] - 2023-01-04
 
