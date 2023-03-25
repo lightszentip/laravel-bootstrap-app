@@ -1,5 +1,4 @@
-name-template: '$RESOLVED_VERSION 🌈'
-tag-template: '$RESOLVED_VERSION'
+name-template: 'DRAFT v$NEXT_PATCH_VERSION 🌈'
 categories:
   - title: '🚀 Features'
     labels:
