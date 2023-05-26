@@ -9110,20 +9110,20 @@
         },
         {
             "name": "mrdebug/crudgen",
-            "version": "1.9.5",
+            "version": "1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/misterdebug/crud-generator-laravel.git",
-                "reference": "4bffa8a92e52d14cba6dd7a28c5a9bf93bee8e16"
+                "reference": "6bf8acc7acd22aa758ea01cf2688e783c862e1c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misterdebug/crud-generator-laravel/zipball/4bffa8a92e52d14cba6dd7a28c5a9bf93bee8e16",
-                "reference": "4bffa8a92e52d14cba6dd7a28c5a9bf93bee8e16",
+                "url": "https://api.github.com/repos/misterdebug/crud-generator-laravel/zipball/6bf8acc7acd22aa758ea01cf2688e783c862e1c2",
+                "reference": "6bf8acc7acd22aa758ea01cf2688e783c862e1c2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=8.0.0"
             },
             "type": "library",
             "extra": {
@@ -9149,11 +9149,26 @@
                 }
             ],
             "description": "Create a Laravel Crud in a few seconds",
+            "keywords": [
+                "composer-package",
+                "crud",
+                "crud-generator",
+                "generator",
+                "laravel",
+                "laravel-crud",
+                "laravel-crud-generator",
+                "laravel-package",
+                "laravel10",
+                "laravel8",
+                "laravel9",
+                "rest",
+                "rest-api"
+            ],
             "support": {
                 "issues": "https://github.com/misterdebug/crud-generator-laravel/issues",
-                "source": "https://github.com/misterdebug/crud-generator-laravel/tree/1.9.5"
+                "source": "https://github.com/misterdebug/crud-generator-laravel/tree/1.10.2"
             },
-            "time": "2023-03-14T11:58:10+00:00"
+            "time": "2023-05-20T03:04:15+00:00"
         },
         {
             "name": "myclabs/deep-copy",
