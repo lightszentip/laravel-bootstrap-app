@@ -12,7 +12,7 @@
         "laravel/jetstream": "^v3.1.0",
         "laravel/sanctum": "^v3.2.1",
         "laravel/tinker": "^v2.8.1",
-        "laravelcollective/html": "^v6.4.0",
+        "spatie/laravel-html": "^3.2.1",
         "lightszentip/laravel-release-changelog-generator": "^0.3.0",
         "livewire/livewire": "^v2.10.7",
          "spatie/laravel-ignition": "^2.0.0",
