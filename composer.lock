@@ -9171,16 +9171,16 @@
         },
         {
             "name": "mrdebug/crudgen",
-            "version": "1.10.2",
+            "version": "1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/misterdebug/crud-generator-laravel.git",
-                "reference": "6bf8acc7acd22aa758ea01cf2688e783c862e1c2"
+                "reference": "549403970cbac9ef480d918a804f82317d6927c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misterdebug/crud-generator-laravel/zipball/6bf8acc7acd22aa758ea01cf2688e783c862e1c2",
-                "reference": "6bf8acc7acd22aa758ea01cf2688e783c862e1c2",
+                "url": "https://api.github.com/repos/misterdebug/crud-generator-laravel/zipball/549403970cbac9ef480d918a804f82317d6927c0",
+                "reference": "549403970cbac9ef480d918a804f82317d6927c0",
                 "shasum": ""
             },
             "require": {
@@ -9227,9 +9227,9 @@
             ],
             "support": {
                 "issues": "https://github.com/misterdebug/crud-generator-laravel/issues",
-                "source": "https://github.com/misterdebug/crud-generator-laravel/tree/1.10.2"
+                "source": "https://github.com/misterdebug/crud-generator-laravel/tree/1.10.3"
             },
-            "time": "2023-05-20T03:04:15+00:00"
+            "time": "2023-07-05T15:37:28+00:00"
         },
         {
             "name": "myclabs/deep-copy",
