@@ -22,7 +22,7 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.63.4",
         "sass-loader": "^13.2.2",
-        "webpack": "5.88.2"
+        "webpack": "5.89.0"
     },
     "dependencies": {
         "light-switch-bootstrap": "^0.1.5"
