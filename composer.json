@@ -35,7 +35,7 @@
         "phpmd/phpmd": "^2.13",
         "psalm/plugin-laravel": "^2.0",
         "psalm/plugin-phpunit": "^0.19.0",
-        "romanzipp/laravel-model-doc": "^2.0",
+        "romanzipp/laravel-model-doc": "^3.0",
         "vimeo/psalm": "^5.8.0"
     },
     "autoload": {
