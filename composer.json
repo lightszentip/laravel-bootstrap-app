@@ -20,7 +20,7 @@
         "spatie/laravel-google-fonts": "^1.2.3"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^v2.13.0",
+        "barryvdh/laravel-ide-helper": "^v3.0.0",
         "fakerphp/faker": "^v1.21.0",
         "friendsofphp/php-cs-fixer": "^v3.15.1",
         "laravel/sail": "^v1.21.2",
